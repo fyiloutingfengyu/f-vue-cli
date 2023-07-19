@@ -7,30 +7,14 @@ import ora from 'ora';
 import download from 'download-git-repo';
 import handlebars from 'handlebars';
 import templateConfig from '../config/template.js';
+import promptConfig from '../config/prompt.js';
 
 export default (program) => {
   program.command('create <projectName>')
     .alias('init')
     .description('创建一个新项目')
     .action(projectName => {
-      inquirer.prompt([
-        {
-          name: 'author',
-          message: '你的名字是：',
-          type: 'input'
-        },
-        {
-          name: 'description',
-          message: '项目描述：',
-          type: 'input'
-        },
-        {
-          name: 'template',
-          message: '请选择要使用的项目模板：',
-          type: 'list',
-          choices: templateConfig.names
-        }
-      ]).then(async answer => {
+      inquirer.prompt(promptConfig).then(async answer => {
         const { author, description, template } = answer;
         const packageOptions = {
           name: projectName,

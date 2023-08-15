@@ -1,10 +1,10 @@
 {
-  "name": "f-vue-cli",
-  "version": "1.0.0",
+  "name": "f-vue3-cli",
+  "version": "1.0.2",
   "description": "",
   "type": "module",
   "bin": {
-    "f-vue-cli": "bin/cli.js"
+    "f-vue3-cli": "bin/cli.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
